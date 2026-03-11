@@ -28,6 +28,7 @@
             z-index: 1000; /* 确保banner在游戏列表之上 */
             touch-action: none; /* 禁用默认触摸行为，支持自定义滑动 */
         }
+        /* 定义页面顶部固定横幅的样式 */
         .indicators {
             position: absolute;
             bottom: 10px;
@@ -69,12 +70,27 @@
             border-bottom: 1px solid #e0e0e0;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 24px;
+            justify-content: space-between;
+            padding: 0 10px;
             cursor: pointer;
         }
-        .game-item:hover {
-            background-color: #f5f5f5;
+        .game-info {
+            flex: 1;
+        }
+        .game-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        .game-desc {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0 0 0;
+        }
+        .game-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
         }
     </style>
     <title>游戏菜单</title>
@@ -89,11 +105,41 @@
         <div class="indicators"></div>
     </div>
     <div class="menu-container">
-        <div class="game-item" onclick="showBanner(0)">游戏1</div>
-        <div class="game-item" onclick="showBanner(1)">游戏2</div>
-        <div class="game-item" onclick="showBanner(2)">游戏3</div>
-        <div class="game-item" onclick="showBanner(3)">游戏4</div>
-        <div class="game-item" onclick="showBanner(4)">游戏5</div>
+        <div class="game-item" onclick="showBanner(0)">
+            <div class="game-info">
+                <h3 class="game-title">游戏1</h3>
+                <p class="game-desc">这是一个精彩的冒险游戏。</p>
+            </div>
+            <img class="game-image" src="image.png" alt="游戏1">
+        </div>
+        <div class="game-item" onclick="showBanner(1)">
+            <div class="game-info">
+                <h3 class="game-title">游戏2</h3>
+                <p class="game-desc">挑战你的策略思维。</p>
+            </div>
+            <img class="game-image" src="image2.png" alt="游戏2">
+        </div>
+        <div class="game-item" onclick="showBanner(2)">
+            <div class="game-info">
+                <h3 class="game-title">游戏3</h3>
+                <p class="game-desc">多人在线竞技场。</p>
+            </div>
+            <img class="game-image" src="image3.png" alt="游戏3">
+        </div>
+        <div class="game-item" onclick="showBanner(3)">
+            <div class="game-info">
+                <h3 class="game-title">游戏4</h3>
+                <p class="game-desc">轻松休闲的益智游戏。</p>
+            </div>
+            <img class="game-image" src="image.png" alt="游戏4">
+        </div>
+        <div class="game-item" onclick="showBanner(4)">
+            <div class="game-info">
+                <h3 class="game-title">游戏5</h3>
+                <p class="game-desc">探索未知的世界。</p>
+            </div>
+            <img class="game-image" src="image2.png" alt="游戏5">
+        </div>
         <!-- 根据需要添加更多游戏项 -->
     </div>
 
